@@ -7,38 +7,50 @@
 <body>
 	<h1>FORMULARIO DE PRODUCTOS</h1>
 	
-	<form action="#" th:action="@{/index1}" th:object="${Producto}" method="post">
+	<form action="#" th:action="@{/procesar}" th:object="${Producto}" method="post">
 	
 		<div>
-		<label for="codigo"> Codigo: </label>
-		<input type="text" th:field="*{codigo}" id="codigo" >
+			<label for="codigo"> Codigo: </label>
+			<input type="text" th:field="*{codigo}" id="codigo" >
+			<span th:errors ="*{codigo}" style="color:#FF0000"></span>
 		</div>
 		
 		<br>
 		
 		<div>
-		<label for="name"> Nombre Producto: </label>
-		<input type="text" th:field="*{nombreProducto}" id="name" >
+			<label for="name"> Nombre Producto: </label>
+			<input type="text" th:field="*{nombreProducto}" id="name" >
+			<span th:errors ="*{nombreProducto}" style="color:#FF0000"></span>
 		</div>
 		
 		<br>
 		
 		<div>
-		<label for="marca"> Marca: </label>
-		<input type="text" th:field="*{marca}" id="marca" >
+			<label for="marca"> Marca: </label>
+			<input type="text" th:field="*{marca}" id="marca" >
+			<span th:errors ="*{marca}" style="color:#FF0000"></span>
 		</div>
 		
 		<br>
 		
 		<div>
-		<label for="descrip"> Descripcion: </label>
-		<input type="text" th:field="*{descripcion}" id="descrip" >
+			<label for="descrip"> Descripcion: </label>
+			<input type="text" th:field="*{descripcion}" id="descrip" >
+			<span th:errors ="*{descripcion}" style="color:#FF0000"></span>
 		</div>
 		
 		<br>
 		
 		<div>
-			<input type= "submit" value="Enviar">
+			<label for="existencias"> Existencias: </label>
+			<input type="text" th:field="*{existencias}" id="existencias" >
+			<span th:errors ="*{existencias}" style="color:#FF0000"></span>
+		</div>
+		
+		<br>
+		
+		<div>
+			<input type= "submit" value="Guardar Producto">
 		</div>
 	</form>
 </body>
